@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<div class="container mt-4 ">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+        <div class="card mt-4 p-4">
+            <div class="card-header text-white">
+                <h2 style="-webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;"><strong>Welcome to Login Page</strong></h2>
+                <h5>Sign in with your details</h5>
+            </div>
+            <div class="card-body">
+                <div [class]="isError?'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+                <div [class]="isSuccess?'alert alert-success':'d-none'" class="my-4">{{message}}</div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="text" required #em="ngModel" [class.is-invalid]= "em.errors && em.touched" class="form-control rounded-pill" name="email" placeholder="Email"  [(ngModel)]="email">
+                <div *ngIf="em.errors && em.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:25%;font-weight:bold" *ngIf="em.errors.required">* Email is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="password" required #pass="ngModel" [class.is-invalid]= "pass.errors && pass.touched" class="form-control rounded-pill" name="password" placeholder="Password"  [(ngModel)]="password">
+                <div *ngIf="pass.errors && pass.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:30%;font-weight:bold" *ngIf="pass.errors.required">* Password is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-4 text-end">
+                <button class="btn btn-primary" [disabled]="loginForm.form.invalid">Login</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<div class="container mt-4">
+    <form #regForm="ngForm" (ngSubmit)="onSubmitForm()">
+        <div class="card mt-4 shadow p-4">
+            <div class="card-header text-white">
+                <h2 style="-webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: black;"><strong>Welcome to Register Page</strong></h2>
+                <h5>Sign up with your details</h5>
+            </div>
+            <div class="card-body">
+                <div [class]="isError?'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+                <div [class]="isSuccess?'alert alert-success':'d-none'" class="my-4">{{message}}</div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="text" required #fname="ngModel" [class.is-invalid]= "fname.errors && fname.touched" class="form-control" name="fullname" placeholder="Full Name" [(ngModel)]="user.fullName">
+                <div *ngIf="fname.errors && fname.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:28%;font-weight:bold" *ngIf="fname.errors.required">* Full Name is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="text" required #email="ngModel" [class.is-invalid]= "email.errors && email.touched" class="form-control" name="email" placeholder="Email"  [(ngModel)]="user.email">
+                <div *ngIf="email.errors && email.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:22%;font-weight:bold" *ngIf="email.errors.required">* Email is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="password" required #pass="ngModel" [class.is-invalid]= "pass.errors && pass.touched" class="form-control" name="password" placeholder="Password" (input)="onInput1($event)"  [(ngModel)]="user.password">
+                <div *ngIf="pass.errors && pass.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:27%;font-weight:bold" *ngIf="pass.errors.required">* Password is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-4">
+                <input type="password" [disabled]="regForm.form.invalid" required class="form-control" name="cpassword" placeholder="Confirm Password" (input)="onInput($event)">
+                <!-- <div *ngIf="cpass.errors && cpass.touched">
+                    <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:27%;font-weight:bold" *ngIf="pass.errors.required">* Password is required</div>
+                </div> -->
+                <div [hidden]="isHide" class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:30%;font-weight:bold" >* Confirm the Password</div>
+            </div>
+            <div class="form-group mt-4 text-end">
+                <button class="btn btn-primary" [disabled]="regForm.form.invalid">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

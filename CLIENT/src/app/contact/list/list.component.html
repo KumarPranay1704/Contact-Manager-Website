@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<div class="container mt-4">
+    <div class="ndi"><a routerLink="/contact/add"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="red" class="bi bi-plus-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg></a></div>
+    <div class="row mt-4">
+        <div class="col-6 mb-4" id="col1" *ngFor="let contact of ContactData">
+            <button id="btn" class="" (click)="onClick(contact._id)"><div class="card rounded-pill bg-dark" >
+                <!-- <div class="card-header bg-danger text-white border border-dark border-4 rounded-pill mt-1 px-4 shadow">
+                    Contact Name:&nbsp;<h3><strong>{{contact.contactName}}</strong></h3>
+                </div> -->
+                  <div class="card-body text-center">
+                    <img src="assets/18.jpg" class="border border-white" id="imge" ><br>
+                     <p style="color: white;"><strong>{{contact.contactName}}</strong></p>
+                </div>
+            </div></button>
+        </div>
+    </div>
+</div>
+

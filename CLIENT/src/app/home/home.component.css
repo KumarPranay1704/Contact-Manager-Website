@@ -1,0 +1,28 @@
+.card{
+    /* margin-left: 10%; */
+    border: none;
+    margin-top: 2%;
+}
+
+.container{
+    height:50%
+}
+
+#reg{
+    background-color: rgb(17, 201, 201);
+    font-size: 30px;
+    margin-top: 5px;
+    color:white;
+    font-weight: bold;
+    text-decoration: underline;
+    box-shadow: 2px 5px;
+}
+
+#reg:hover{
+    opacity:1 ;
+    color:rgb(18, 29, 177);
+    font-weight: none;
+    border:2px solid black;
+    box-shadow: 2px 5px rgb(18, 29, 177);
+    /* background-color: rgb(24, 226, 216); */
+}

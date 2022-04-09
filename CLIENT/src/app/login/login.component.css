@@ -1,0 +1,10 @@
+.card{
+    
+    background-color: transparent;
+    width:70%;
+    margin-left: 150px;
+    
+}
+.card-header{
+    font-weight: bold;
+}

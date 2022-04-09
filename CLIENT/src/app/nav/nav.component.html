@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid mt-4">
+      <a class="navbar-brand bg-primary bg-transparent text-white text-decoration-underline" routerLink="/"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+          <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+        </svg><strong>ontact&nbsp;</strong><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-kanban-fill" viewBox="0 0 16 16">
+          <path d="M2.5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11zm5 2h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm-5 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm9-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+        </svg><strong>anager </strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" class="atc text-decoration-none" aria-current="page" routerLink="/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a routerLink="/login" class="atc text-decoration-none p-2" *ngIf="isShow">LOGIN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a routerLink="/register" class="atc text-decoration-none rounded-pill border p-2 " *ngIf="isShow">REGISTER</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="atc text-decoration-none p-2" *ngIf="!isShow" style="text-transform: uppercase;font-size: 20px;border: 4x solid white;">{{ uname }}</span>&nbsp;&nbsp;&nbsp;
+          <a href="" class="atc text-decoration-none p-2" *ngIf="!isShow" (click)="onLogout()">LOGOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </form>
+      </div>
+    </div>
+  </nav>

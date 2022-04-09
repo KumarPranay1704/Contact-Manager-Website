@@ -1,0 +1,8 @@
+.atc{
+    color: white;
+}
+
+.atc:hover{
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <div class="row mt-4">
+        <div class="col">
+            <form #addForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="card bg-dark">
+                    <div class="card mt-4 shadow p-4">
+                        <div class="card-header text-white">
+                            <h2 style="-webkit-text-stroke-width: 2px;
+                            -webkit-text-stroke-color: black;"><strong>Welcome to Add Page</strong></h2>
+                            <h5>Enter the details</h5>
+                        </div>
+                        <div class="card-body">
+                            <div [class]="isError?'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+                            <div [class]="isSuccess?'alert alert-success':'d-none'" class="my-4">{{message}}</div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" required #fname="ngModel" [class.is-invalid]= "fname.errors && fname.touched" class="form-control" name="fullname" placeholder="Full Name" [(ngModel)]="cname">
+                            <div *ngIf="fname.errors && fname.touched">
+                                <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:28%;font-weight:bold" *ngIf="fname.errors.required">* Full Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" required #email="ngModel" [class.is-invalid]= "email.errors && email.touched" class="form-control" name="email" placeholder="Email"  [(ngModel)]="cemail">
+                            <div *ngIf="email.errors && email.touched">
+                                <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:22%;font-weight:bold" *ngIf="email.errors.required">* Email is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" required #phn="ngModel" [class.is-invalid]= "phn.errors && phn.touched" class="form-control" name="phone" placeholder="Phone number" [(ngModel)]="cphone">
+                            <div *ngIf="phn.errors && phn.touched">
+                                <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:27%;font-weight:bold" *ngIf="phn.errors.required">* Phone number is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" required #typ="ngModel" [class.is-invalid]= "typ.errors && typ.touched" class="form-control" name="type" placeholder="Type" [(ngModel)]="ctype">
+                            <div *ngIf="typ.errors && typ.touched">
+                                <div class="text-danger my-1 p-2 text-center" style="background-color: rgb(238, 202, 202);width:27%;font-weight:bold" *ngIf="typ.errors.required">* Type is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4 text-end">
+                            <button class="btn btn-primary" [disabled]="addForm.form.invalid">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
